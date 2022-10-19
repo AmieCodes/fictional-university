@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class();?>
+<body <?php body_class(); ?> >
 <header class="site-header">
       <div class="container">
         <h1 class="school-logo-text float-left">
@@ -19,23 +19,19 @@
         <!--***** NAGIVATION *****-->
         <div class="site-header__menu group">
           <nav class="main-navigation">
-            <?php
+          <?php
             wp_nav_menu([
-                'theme_location' => 'headerMenuLocation'
+              'theme_location' => 'headerMenuLocation'
             ]);
-
-            if(has_nav_menu('headerMenuLocation')) {
-                echo 'menu exists';
-            }
-            ?>
-
-            <!-- <ul>
-              <li><a href="<?php //echo site_url('/about-us'); ?>">About Us</a></li>
-              <li><a href="#">Programs</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Campuses</a></li>
-              <li><a href="#">Blog</a></li>
-            </ul> -->
+          ?>
+            <!--
+            // <ul>
+            //   <li><a href="<?php //echo site_url('/about-us'); ?>">About Us</a></li>
+            //   <li><a href="#">Programs</a></li>
+            //   <li><a href="#">Events</a></li>
+            //   <li><a href="#">Campuses</a></li>
+            //   <li><a href="#">Blog</a></li>
+            // </ul> -->
           </nav> <!--***** NAGIVATION END*****-->
           <div class="site-header__util">
             <a href="#" class="btn btn--small btn--orange float-left push-right">Login</a>
