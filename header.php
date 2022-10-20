@@ -19,20 +19,20 @@
         <!--***** NAGIVATION *****-->
         <div class="site-header__menu group">
           <nav class="main-navigation">
-          <?php
-            wp_nav_menu([
-              'theme_location' => 'headerMenuLocation'
-            ]);
+          <?php //Dynamic Main Nav Code
+            // wp_nav_menu([
+            //   'theme_location' => 'headerMenuLocation'
+            // ]);
           ?>
-            <!--
-            // <ul>
-            //   <li><a href="<?php //echo site_url('/about-us'); ?>">About Us</a></li>
-            //   <li><a href="#">Programs</a></li>
-            //   <li><a href="#">Events</a></li>
-            //   <li><a href="#">Campuses</a></li>
-            //   <li><a href="#">Blog</a></li>
-            // </ul> -->
-          </nav> <!--***** NAGIVATION END*****-->
+          <!-- ***** static nav menu ***** -->
+            <ul>
+                <li><a href="<?php //echo site_url('/about-us'); ?>">About Us</a></li>
+                <li><a href="#">Programs</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Campuses</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+            </nav> <!--***** NAGIVATION END*****-->
           <div class="site-header__util">
             <a href="#" class="btn btn--small btn--orange float-left push-right">Login</a>
             <a href="#" class="btn btn--small btn--dark-orange float-left">Sign Up</a>
