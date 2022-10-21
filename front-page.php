@@ -63,7 +63,7 @@
 
 
 
-        <p class="t-center no-margin"><a href="<?php site_url('/blog'); ?>" class="btn btn--yellow">View All Blog Posts</a></p>
+        <p class="t-center no-margin"><a href="<?php echo site_url('/blog'); ?>" class="btn btn--yellow">View All Blog Posts</a></p>
       </div>
     </div>
   </div>
@@ -106,34 +106,3 @@
 
 <?php get_footer();
 ?>
-
-
-<!--  THIS WAS THE Second LESSON -->
-<!-- <?php
-
-// $names = ['Amie', 'Dilworth', 'Bella', 'Boesley'];
-
-// $count = 0;
-
-// while ($count < count($names)) {
-//     echo "<li> Hi, my name is $names[$count] </li>";
-//     $count++;
-//     }
-
-?> -->
-
-
-<!--  THIS WAS THE FIRST LESSON -->
-<!-- <?php
-
-  // function greet($name, $colour) {
-  //     echo "<P> Hi, my name is $name and my favourite colour is $colour.</P>";
-  // }
-
-  // greet('John', 'blue');
-  // greet('Jane', 'green');
-
-?>
-
-<h1><?php //bloginfo('name'); ?></h1>
-<p> <?php //bloginfo('description'); ?></p> -->
