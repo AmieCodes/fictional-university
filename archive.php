@@ -9,9 +9,12 @@
         }
         if (is_author()) {
           echo 'Posts by';  the_author();
-        } ?> </h1>
+        } ?>
+        <!-- <?php //the_archive_title(); ?> this does the above but in a different way and also takes car of date archives.-->
+        </h1>
+
         <div class="page-banner__intro">
-            <p>Keep up with our latest news </p>
+            <p> <?php the_archive_description(); ?> </p>
         </div>
     </div>
 </div>
