@@ -15,13 +15,13 @@
     <div class="full-width-split__one">
       <div class="full-width-split__inner">
         <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
-
+         <!-- ******* EVENTS ******* -->
           <?php
-            $homepageEvents = new WP_Query(['posts_per_page' => 2,
+            $homepageEvents = new wp_query(['posts_per_page' => 2,
               'post_type' => 'event']);
 
-            while ($homepageEvents->have_posts()) {
-              $homepageEvents->the_post(); ?>
+            while ($homepageEvents -> have_posts()) {
+              $homepageEvents -> the_post(); ?>
                 <div class="event-summary">
                   <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
                     <span class="event-summary__month"><?php the_time('M'); ?></span>
@@ -33,7 +33,7 @@
                   </div>
                 </div>
               <?php }
-            ?>
+            ?> <!-- ***** END OF WHILE LOOP ***** -->
         <!-- ******* BLUE VIEW ALL EVENTS BUTTON ******* -->
         <p class="t-center no-margin"><a href="<?php the_permalink(); ?>" class="btn btn--blue">View All Events</a></p>
       </div>
