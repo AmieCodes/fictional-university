@@ -17,7 +17,7 @@
         <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
          <!-- ******* EVENTS ******* -->
           <?php
-            $homepageEvents = new wp_query(['posts_per_page' => 2,
+            $homepageEvents = new WP_Query(['posts_per_page' => 2,
               'post_type' => 'event']);
 
             while ($homepageEvents -> have_posts()) {
