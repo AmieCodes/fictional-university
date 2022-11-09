@@ -28,9 +28,9 @@
           <!-- 'wp_get_post_parent_id(0) == 12 0' means look up current page 12 is id of About us page - this code states if current page is about us page, or current page is a child of about us, echo out this class which changes the colour of the nav-->
             <ul>
                 <li <?php if (is_page('about-us') or wp_get_post_parent_id(0) == 12) echo 'class="current-menu-item"'?> ><a href="<?php echo site_url('/about-us'); ?>">About Us</a></li>
-                <li><a href="#">Programs</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Campuses</a></li>
+                <li><a href="<?php echo site_url('/programs'); ?>">Programs</a></li>
+                <li><a href="<?php echo site_url('/events'); ?>">Events</a></li>
+                <li><a href="<?php echo site_url('/campuses'); ?>">Campuses</a></li>
                 <li <?php if (get_post_type() == 'post') echo 'class="current-menu-item"' ?>><a href="<?php echo site_url('/blog'); ?>">Blog</a></li>
             </ul>
             </nav> <!--***** NAGIVATION END*****-->
