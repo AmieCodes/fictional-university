@@ -13,9 +13,9 @@ function university_files() {
 add_action('wp_enqueue_scripts' , 'university_files');
 
 function university_features() {
-    // register_nav_menu('headerMenuLocation', 'Header Menu Location'); //adds menu option to WP Admin
-    // register_nav_menu('footerLocationOne', 'Footer Location One');   //adds menu option to WP Admin
-    // register_nav_menu('footerLocationTwo', 'Footer Location Two');   //adds menu option to WP Admin
+    register_nav_menu('headerMenuLocation', 'Header Menu Location'); //adds menu option to WP Admin
+    //register_nav_menu('footerLocationOne', 'Footer Location One');   //adds menu option to WP Admin
+    //register_nav_menu('footerLocationTwo', 'Footer Location Two');   //adds menu option to WP Admin
     add_theme_support('title-tag');
 }
 

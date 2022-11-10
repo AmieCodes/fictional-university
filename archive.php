@@ -8,16 +8,16 @@ get_header();
             <?php
             if (is_page('blog')) {
                 echo 'Welcome to our Blog!';
-            } else the_archive_title();?>
+            } else the_archive_title();
 
-            <!-- if (is_category()) {
+            /*if (is_category()) {
                 single_cat_title();
             }
 
             if (is_author()) {
                 echo "Posts by"; the_author();
-            } -->
-
+            } */
+            ?>
         </h1>
         <div class="page-banner__intro">
             <p><?php the_archive_description(); ?></p>
