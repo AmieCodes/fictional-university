@@ -27,13 +27,13 @@ while (have_posts()) {
 
             if ($relatedPrograms){
                 echo '<hr class="section-break">';
-            echo '<h4 class="headline healine--medium"> Related Programs </h4>';
-            echo '<ul class="link-list min-list">';
-            foreach($relatedPrograms as $program) { ?>
+                echo '<h4 class="headline healine--medium"> Related Programs </h4>';
+                echo '<ul class="link-list min-list">';
+                foreach($relatedPrograms as $program) { ?>
                 <li><a href="<?php echo get_the_permalink($program); ?>"><?php echo get_the_title($program); ?></a></li>
-            <?php  }
-            echo '</ul>';
-            }
+                <?php  }
+                echo '</ul>';
+                }
             //print_r($relatedPrograms); -**** Allows to look inside a variable ****
         ?>
         </div>
