@@ -18,7 +18,7 @@
          <!-- ******* EVENTS ******* -->
           <?php
             $today = date('Ymd');
-            $homepageEvents = new WP_Query(['posts_per_page' => -1, //using -1 will return all posts that meet the query.
+            $homepageEvents = new WP_Query(['posts_per_page' => 2, //using -1 will return all posts that meet the query.
               'post_type' => 'event',
               'meta_key' => 'event_date', //sets meta value to the custom field event date
               'orderby' => 'meta_value_num', //orders by event date -custom field
