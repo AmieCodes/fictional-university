@@ -15,10 +15,25 @@ get_header(); ?>
 <div class="container container--narrow page-section">
 <?php
 
-$pastEvents = new WP_Query
+$today = date('Ymd');
+$pastEvents = new WP_Query([
+    'paged' => get_query_var('paged' , 1), //looks at the page number on url and if not a 2nd or 3rd page it returns
+    'post_type' => 'event',
+    'meta_key' => 'event_date', //sets meta value to the custom field event date
+    'orderby' => 'meta_value_num', //orders by event date -custom field
+    'order' => 'ASC', //puts in alphabetical order A-Z
+    'meta_query' => [ //this array filters out any events which are in the past.
+    [
+        'key' => 'event_date',
+        'compare' => '<', //less than todays date - i.e past events
+        'value' => $today,
+        'type' => 'numeric'
+    ]
+    ]
+]);
 
-  while(have_posts()) {
-    the_post(); ?>
+  while($pastEvents->have_posts()) {
+    $pastEvents->the_post(); ?>
     <div class="event-summary">
     <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
         <span class="event-summary__month"><?php
@@ -35,7 +50,9 @@ $pastEvents = new WP_Query
       </div>
     </div>
   <?php }
-  echo paginate_links();
+  echo paginate_links([
+    'total' => $pastEvents->max_num_pages
+  ]);
 ?>
 </div>
 
