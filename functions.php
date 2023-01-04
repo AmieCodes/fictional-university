@@ -1,5 +1,35 @@
 <?php
 
+function pageBanner($args = NULL ) { //NULL makes the $args value optinal and not a requirement // adding args in () males the pageBanner function linked to args $args which is an array of data set in page.php
+    //the if statement says if there is no custom title (pageBanner array)... then set the page default title.
+    if (!isset($args ['title'])) { //square brackets to look inside of a function e.g $args
+      $args ['title'] = get_the_title();
+    }  //if(!isset--allows you to try to access an array item that doesn't exist
+
+    if (!$args ['subtitle']) {
+        $args ['subtitle'] = get_field('page_banner_subtitle');
+    }
+
+    if (!$args ['photo']) {
+        if (get_field('page_banner_background_image')) {
+            $args['photo'] = get_field('page_banner_background_image')['sizes']['pageBanner'];
+        } else {
+            $args['photo'] = get_theme_file_uri('images/ocean.jpg');
+        }
+    }
+
+    ?>
+    <div class="page-banner">
+        <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['photo']; //why is php symbols and $args not white??>)"></div>
+        <div class="page-banner__content container container--narrow">
+            <h1 class="page-banner__title"><?php echo $args['title']; ?></h1>
+            <div class="page-banner__intro">
+                <p><?php echo $args['subtitle']; ?></p>
+            </div>
+        </div>
+    </div>
+
+    <?php }
 function university_files() {
     //ADDED js
     wp_enqueue_script('main-university-js' , get_theme_file_uri('/build/index.js'),array('jquery'),'1.0', true);
@@ -12,12 +42,13 @@ function university_files() {
 
 add_action('wp_enqueue_scripts' , 'university_files');
 
-function university_features() {
-    //adds menu option to WP Admin
+function university_features() { //adds menu option to WP Admin
     register_nav_menu('headerMenuLocation', 'Header Menu Location');
     add_theme_support('title-tag');
-    add_theme_support('post-thumbnails');
-    // created featured image section n wp-admin - blog posts & custom posts with additional step in custom query in prof. ost type>university-post-types.php
+    add_theme_support('post-thumbnails');// created featured image section n wp-admin - blog posts & custom posts with additional step in custom query in prof. ost type>university-post-types.php
+    add_image_size('professorLandscape' , 400, 260, true);//true crops the image
+    add_image_size('professorPortrate' , 480, 650, true);
+    add_image_size('pageBanner', 1500, 350, true);
     //register_nav_menu('footerLocationOne', 'Footer Location One');   //adds menu option to WP Admin
     //register_nav_menu('footerLocationTwo', 'Footer Location Two');   //adds menu option to WP Admin
 }
